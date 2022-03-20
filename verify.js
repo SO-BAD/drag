@@ -1,75 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>拖曳</title>
-    <script src="jquery-3.6.0.min.js"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        .test {
-            width: 50px;
-            height: 50px;
-            border: 1px solid black;
-            text-align: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: red;
-        }
-
-        .container {
-            width: 50px;
-            height: 50px;
-            margin-left: 10px;
-            position: relative;
-        }
-
-        .target {
-
-            background-color: aqua;
-        }
-        body {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-</head>
-
-<body>
-    <div>
-        <div style="display: flex; margin-top: 100px;">
-            <div class="container">
-                <div draggable="true" class="test" data-no="0">T</div>
-            </div>
-            <div class="container">
-                <div draggable="true" class="test" data-no="1">E</div>
-            </div>
-            <div class="container">
-                <div draggable="true" class="test" data-no="2">S</div>
-            </div>
-            <div class="container">
-                <div draggable="true" class="test" data-no="3">A</div>
-            </div>
-        </div>
-
-        <div style="display: flex; margin-top: 10px;">
-            <div class="container target">S</div>
-            <div class="container target">A</div>
-            <div class="container target">T</div>
-            <div class="container target">E</div>
-        </div>
-    </div>
-
-
-    <script>
         let source = 0;
         let ans = new Array();
         function ck(){
@@ -83,7 +12,10 @@
                 }
             }
             if(count ==4){
-                alert("ok");
+                alert("OK");
+                $("#verifyBox").hide(1000,()=>{
+                    $("#schedule").show(500);
+                })
             } 
         }
         function cancelDefault(e) {
@@ -140,7 +72,3 @@
                     dropped(e)
             })
         }
-    </script>
-</body>
-
-</html>
